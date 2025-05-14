@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { Toaster } from "react-hot-toast";
-import Gallery from "./components/Galery";
+import Gallery from "./components/Gallery";
 import Intro from "./components/Intro";
 import Main from "./components/Main";
 import Quiz from "./components/Quiz";
@@ -25,7 +25,7 @@ function App() {
         position="top-center"
         toastOptions={{
           style: {
-            background: "#020617",
+            backgroundImage: "linear-gradient(360deg, #333, #111)",
             color: "#fff",
             display: "flex",
             justifyContent: "center",
@@ -40,13 +40,13 @@ function App() {
             maxWidth: "90%",
             width: "100%",
             margin: "0 auto",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.8)",
             marginTop: "auto",
             marginBottom: "auto",
             marginLeft: "auto",
             marginRight: "auto",
           },
-          duration: 9000,
+          duration: 9.5 * 1000, // 9.5 seconds
         }}
         reverseOrder={false}
       />
