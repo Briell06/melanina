@@ -1,5 +1,5 @@
 export interface StateType {
-  status: "START" | "INTRO" | "QUIZ" | "END";
+  status: "START" | "INTRO" | "QUIZ" | "QUIZEND";
   text: string;
 }
 
@@ -19,7 +19,11 @@ interface QuizStart {
   type: "QuizStart";
 }
 
-export type Action = CancelReady | Ready | ImgTouched | QuizStart;
+interface QuizEnd {
+  type: "QuizEnd";
+}
+
+export type Action = CancelReady | Ready | ImgTouched | QuizStart | QuizEnd;
 
 export const initialState = {
   status: "START" as const,
@@ -46,6 +50,8 @@ const appReducer = (state: StateType, action: Action): StateType => {
         ...state,
         status: "QUIZ",
       };
+    case "QuizEnd":
+      return { ...state, status: "QUIZEND" };
   }
 };
 
