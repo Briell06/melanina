@@ -42,13 +42,13 @@ const quizReducer = (state: StateType, action: Action): StateType => {
       if (action.option === 1)
         return {
           ...state,
-          text: "Melendi??, weno, no esta mal, me debes un jardín con enanitos entonces, las demás no me gustan tanto jkskjs",
+          text: "Melendi??, weno, no esta mal, me debes la canción de tu jardín con enanitos entonces, las demás no me gustan tanto jkskjs",
           selected: action.option,
         };
       if (action.option === 2)
         return {
           ...state,
-          text: "Ni siquiera se quienes son los locos esos 🥲, pero weno, respeto tu opinión (me debes una de Arjona kjskjs)",
+          text: "Ni siquiera se quienes son los locos esos 🥲, pero weno, respeto tu opinión (me debes una de Arjona y punto kjskjs)",
           selected: action.option,
         };
       if (action.option === 3)

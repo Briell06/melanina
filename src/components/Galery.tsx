@@ -10,7 +10,7 @@ const Gallery = () => {
       <p className="mt-3">
         (si es que las hay, porque no soy mucho de fotos la verdad ksksjksj)
       </p>
-      <div className="h-[60vh] bg-slate-800 rounded-2xl bg-gradient-to-b from-slate-400 to-slate-700 p-5 shadow-lg shadow-black grid grid-cols-3 gap-5">
+      <div className="h-[50vh] bg-slate-800 rounded-2xl bg-gradient-to-b from-slate-400 via-slate-700 to-slate-900 p-5 shadow-lg shadow-black grid grid-cols-3 gap-5">
         {Array.from({ length: 9 }).map((_, index) => (
           <Skeleton
             className="shadow-lg shadow-black rounded-2xl"
