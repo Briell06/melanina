@@ -18,8 +18,8 @@ const Start = ({ text, dispatch }: Props) => {
           onMouseEnter={() => dispatch({ type: "ImgTouched" })}
         />
       </div>
-      <p className="my-0">(mantén presionada la foto)</p>
-      <p className="mt-0">
+      <p className="my-0 text-center mx-auto">(mantén presionada la foto)</p>
+      <p className="mt-0 text-center mx-auto">
         por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
       </p>
       <Button

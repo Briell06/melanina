@@ -33,7 +33,8 @@ const Quiz = ({ dispatch }: Props) => {
         <Button
           onClick={() => {
             toast.success(
-              "Siempre recuerda, nunca dejes de hacer lo que te gusta por miedo a que dirá la gente, vive la vida como te gusta y no como te dicen que debes vivir."
+              "Siempre recuerda, nunca dejes de hacer lo que te gusta por miedo a que dirá la gente, vive la vida como te gusta y no como te dicen que debes vivirla (La pena a la verga jksjskjs)",
+              { icon: "💗" }
             );
             dispatch({ type: "QuizEnd" });
           }}

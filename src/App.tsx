@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { Toaster } from "react-hot-toast";
+import Gallery from "./components/Galery";
 import Intro from "./components/Intro";
 import Main from "./components/Main";
 import Quiz from "./components/Quiz";
@@ -18,6 +19,7 @@ function App() {
           <Start dispatch={dispatch} text={state.text} />
         )}
         {state.status === "QUIZ" && <Quiz dispatch={dispatch} />}
+        {state.status === "QUIZEND" && <Gallery />}
       </Main>
       <Toaster
         position="top-center"
@@ -25,7 +27,11 @@ function App() {
           style: {
             background: "#020617",
             color: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             fontSize: "1.2rem",
+            flexDirection: "column",
             fontFamily: "Cascadia Code PL",
             fontWeight: "bold",
             padding: "1rem",
@@ -35,8 +41,12 @@ function App() {
             width: "100%",
             margin: "0 auto",
             boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+            marginTop: "auto",
+            marginBottom: "auto",
+            marginLeft: "auto",
+            marginRight: "auto",
           },
-          duration: 5000,
+          duration: 9000,
         }}
         reverseOrder={false}
       />
