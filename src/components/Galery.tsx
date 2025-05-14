@@ -1,4 +1,5 @@
-import { Skeleton } from "@mui/material";
+import { Start } from "@mui/icons-material";
+import { Button, Skeleton } from "@mui/material";
 
 const Gallery = () => {
   return (
@@ -21,6 +22,13 @@ const Gallery = () => {
           />
         ))}
       </div>
+      <Button
+        variant="contained"
+        endIcon={<Start />}
+        sx={{ width: "fit-content", ml: "auto", mr: 5 }}
+      >
+        Continuar
+      </Button>
     </div>
   );
 };
