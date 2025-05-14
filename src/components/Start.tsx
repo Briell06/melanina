@@ -26,13 +26,15 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
       <p className="mx-auto mt-0 text-center">
         por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
       </p>
-      <Button
-        onClick={() => dispatch({ type: "QuizStart" })}
-        variant="contained"
-        sx={{ bgcolor: "#cad5e2", color: "black", fontWeight: "bold" }}
-      >
-        Bueno, Seguimos o que
-      </Button>
+      {!clicked && (
+        <Button
+          onClick={() => dispatch({ type: "QuizStart" })}
+          variant="contained"
+          sx={{ bgcolor: "#cad5e2", color: "black", fontWeight: "bold" }}
+        >
+          Bueno, Seguimos o que
+        </Button>
+      )}
     </div>
   );
 };
