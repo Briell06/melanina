@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Gallery from "./components/Gallery";
 import Intro from "./components/Intro";
@@ -9,6 +9,8 @@ import appReducer, { initialState } from "./reducers/appReducer";
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, initialState);
+  const [clicked, setClicked] = useState(false);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white to-slate-900 bg-gradient-to-b from-slate-950 font-['Cascadia Code PL']">
       <Main>
@@ -16,7 +18,12 @@ function App() {
           <Intro dispatch={dispatch} text={state.text} />
         )}
         {state.status === "INTRO" && (
-          <Start dispatch={dispatch} text={state.text} />
+          <Start
+            clicked={clicked}
+            setClicked={setClicked}
+            dispatch={dispatch}
+            text={state.text}
+          />
         )}
         {state.status === "QUIZ" && <Quiz dispatch={dispatch} />}
         {state.status === "QUIZEND" && <Gallery />}
