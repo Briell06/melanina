@@ -22,7 +22,7 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
         alt="img"
         className={` w-1/2 mb-2 transition z-50  cursor-pointer select-none h-1/2 rounded-2xl ${clicked ? "scale-250 " : ""}`}
       />
-      <p className="mx-auto my-0 text-center">(mantén presionada la foto)</p>
+      <p className="mx-auto my-0 text-center">(toca la foto)</p>
       <p className="mx-auto mt-0 text-center">
         por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
       </p>
