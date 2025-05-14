@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { useState } from "react";
 import image from "../assets/img.png";
 import type { Action } from "../reducers/appReducer";
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
+  const [touched, setTouched] = useState(false);
   return (
     <div className="flex flex-col items-center justify-center p-4 space-y-10 text-white">
       <h1 className="text-3xl font-bold text-center text-slate-300">{text}</h1>
@@ -17,15 +19,18 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
         onClick={() => {
           dispatch({ type: "ImgTouched" });
           setClicked(!clicked);
+          setTouched(true);
         }}
         src={image}
         alt="img"
         className={` w-1/2 mb-2 transition z-50  cursor-pointer select-none h-1/2 rounded-2xl ${clicked ? "scale-250 " : ""}`}
       />
-      <p className="mx-auto my-0 text-center">(toca la foto)</p>
-      <p className="mx-auto mt-0 text-center">
-        por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
-      </p>
+      {!touched && <p className="mx-auto my-0 text-center">(toca la foto)</p>}
+      {!touched && (
+        <p className="mx-auto mt-0 text-center">
+          por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
+        </p>
+      )}
       {!clicked && (
         <Button
           onClick={() => dispatch({ type: "QuizStart" })}
