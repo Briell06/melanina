@@ -12,9 +12,15 @@ interface Props {
 
 const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
   const [touched, setTouched] = useState(false);
+
   return (
-    <div className="flex flex-col items-center justify-center p-4 space-y-10 text-white">
-      <h1 className="text-3xl font-bold text-center text-slate-300">{text}</h1>
+    <div className="flex flex-col items-center justify-center space-y-8">
+      <h1
+        className={`text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200 ${touched && "text-white"}`}
+      >
+        {text}
+      </h1>
+
       <img
         onClick={() => {
           dispatch({ type: "ImgTouched" });
@@ -23,21 +29,34 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
         }}
         src={image}
         alt="img"
-        className={` w-1/2 mb-2 transition z-50  cursor-pointer select-none h-1/2 rounded-2xl ${clicked ? "scale-250 " : ""}`}
+        className={`
+            transition-all duration-500 ease-out  rounded-2xl
+            border-4 border-transparent hover:border-indigo-500/50
+            ${clicked ? "scale-200 shadow-2xl" : "hover:scale-105"}
+            cursor-pointer select-none w-64 h-64 object-cover
+          `}
       />
-      {!touched && <p className="mx-auto my-0 text-center">(toca la foto)</p>}
       {!touched && (
-        <p className="mx-auto mt-0 text-center">
-          por cierto perdón por la foto, no tenia mas ninguna ksjksjksj
-        </p>
+        <p className="text-lg font-medium text-white">Toca la foto</p>
       )}
+
       {!clicked && (
         <Button
           onClick={() => dispatch({ type: "QuizStart" })}
           variant="contained"
-          sx={{ bgcolor: "#cad5e2", color: "black", fontWeight: "bold" }}
+          sx={{
+            bgcolor: "rgba(255,255,255,0.1)",
+            backdropFilter: "blur(8px)",
+            color: "white",
+            fontWeight: "bold",
+            padding: "0.75rem 2rem",
+            borderRadius: "1rem",
+            "&:hover": {
+              bgcolor: "rgba(255,255,255,0.2)",
+            },
+          }}
         >
-          Bueno, Seguimos o que
+          Seguimos ➜
         </Button>
       )}
     </div>
