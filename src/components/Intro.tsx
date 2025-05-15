@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import type { Action } from "../reducers/appReducer";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 function Intro({ text, dispatch }: Props) {
   return (
-    <div className="container mx-auto -mt-20">
+    <div className="container mx-auto">
       <h2 className="w-11/12 mx-auto text-6xl font-bold text-center text-gray-200">
         {text === "De madre la enana esta 😒"
           ? "Pero es que tu ves como tú eres 😡"
@@ -18,7 +18,7 @@ function Intro({ text, dispatch }: Props) {
       <h3 className="w-11/12 mx-auto text-3xl font-bold text-center">{text}</h3>
       <div className="flex justify-center gap-4 mt-8">
         <Button
-          sx={{ boxShadow: "0 0 " }}
+          sx={{ boxShadow: "0 20px 20px -5px #0f172b" }}
           variant="contained"
           onClick={() => dispatch({ type: "Ready" })}
         >
@@ -28,6 +28,8 @@ function Intro({ text, dispatch }: Props) {
         </Button>
         {text !== "De madre la enana esta 😒" && (
           <Button
+            className="bg-slate-900"
+            sx={{ boxShadow: "0 20px 20px -5px #0f172b" }}
             variant="contained"
             color="error"
             onClick={() => dispatch({ type: "CancelReady" })}

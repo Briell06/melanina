@@ -1,5 +1,5 @@
 export interface StateType {
-  status: "START" | "INTRO" | "QUIZ" | "QUIZEND";
+  status: "START" | "INTRO" | "QUIZ" | "QUIZEND" | "END";
   text: string;
 }
 
@@ -23,7 +23,17 @@ interface QuizEnd {
   type: "QuizEnd";
 }
 
-export type Action = CancelReady | Ready | ImgTouched | QuizStart | QuizEnd;
+interface End {
+  type: "End";
+}
+
+export type Action =
+  | CancelReady
+  | Ready
+  | ImgTouched
+  | QuizStart
+  | QuizEnd
+  | End;
 
 export const initialState = {
   status: "START" as const,
@@ -38,7 +48,7 @@ const appReducer = (state: StateType, action: Action): StateType => {
       return {
         ...state,
         status: "INTRO",
-        text: "Aquí tenemos a la psicóloga mas dura y hermosa que existe :D",
+        text: "Aquí tenemos a la psicóloga más hermosa que hay :D",
       };
     case "ImgTouched":
       return {
@@ -52,6 +62,8 @@ const appReducer = (state: StateType, action: Action): StateType => {
       };
     case "QuizEnd":
       return { ...state, status: "QUIZEND" };
+    case "End":
+      return { ...state, status: "END" };
   }
 };
 

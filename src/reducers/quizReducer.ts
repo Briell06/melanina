@@ -26,7 +26,7 @@ export const initialQuizState = {
     ],
     "right-option": 0,
   },
-  text: "Vamos allá, selecciona tu cantante favorito aquí de los que están aca",
+  text: "Vamos allá, selecciona tu cantante favorito de los que están aca",
   selected: null,
 };
 
@@ -36,7 +36,7 @@ const quizReducer = (state: StateType, action: Action): StateType => {
       if (action.option === 0)
         return {
           ...state,
-          text: "Esoooooooo, ese es el tanke kjskjskjs, asi que me debes una canción de ese tanke",
+          text: "Esoooooooo, ese es el tanke kjskjskjs, así que me debes una canción de ese tanke",
           selected: action.option,
         };
       if (action.option === 1)

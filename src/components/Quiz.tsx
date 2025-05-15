@@ -14,26 +14,41 @@ const Quiz = ({ dispatch }: Props) => {
   const [state, quizDispatch] = useReducer(quizReducer, initialQuizState);
 
   return (
-    <div>
-      <h1>{<BiSmile size={"200px"} className="mx-auto mb-4 text-center" />}</h1>
-      <h2 className="font-mono text-3xl font-bold text-center">{state.text}</h2>
+    <div className="max-w-2xl mx-auto">
+      <BiSmile
+        size={120}
+        className="mx-auto mb-8 text-indigo-300 animate-bounce"
+      />
 
-      <div className="flex flex-col mt-20 space-y-2">
+      <h2 className="mb-12 text-3xl font-bold text-center bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-cyan-50">
+        {state.text}
+      </h2>
+
+      <div className="space-y-4 text-cyan-50">
         {state.questions.options.map((question, index) => (
           <button
-            onClick={() => quizDispatch({ type: "SELECTED", option: index })}
-            className={`${state.selected === index ? "bg-slate-950 translate-x-5 " : ""} w-10/12 py-5 mx-auto text-xl font-semibold transition rounded-4xl bg-slate-800 hover:bg-slate-950 cursor-pointer hover:translate-x-5`}
             key={index}
+            onClick={() => quizDispatch({ type: "SELECTED", option: index })}
+            className={`
+              w-full p-4 text-lg font-medium rounded-xl transition-all duration-300
+              ${
+                state.selected === index
+                  ? "bg-indigo-600 translate-x-4"
+                  : "bg-slate-800/50 hover:bg-slate-700/50 hover:translate-x-2"
+              }
+              backdrop-blur-sm border border-white/10
+            `}
           >
             {question}
           </button>
         ))}
       </div>
-      <div className="flex justify-end w-10/12 mx-auto ">
+
+      <div className="flex justify-end mt-8">
         <Button
           onClick={() => {
             toast.success(
-              "Siempre recuerda, nunca dejes de hacer lo que te gusta por miedo a que dirá la gente, vive la vida como te gusta y no como te dicen que debes vivirla (La pena a la verga jksjskjs)",
+              "Nunca dejes de hacer algo por el miedo al que dirán, y menos si es algo que amas, al la vida es una sola, y hay que disfrutarla y ser nosotros mismos, porque a nadie le importa lo que hagamos, así que a ser felices. La pena a la verga jksjs",
               {
                 icon: "💗",
                 style: { display: "flex", flexDirection: "column-reverse" },
@@ -43,7 +58,14 @@ const Quiz = ({ dispatch }: Props) => {
           }}
           variant="contained"
           endIcon={<Start />}
-          sx={{ mt: 5, borderRadius: 16 }}
+          sx={{
+            borderRadius: "1rem",
+            padding: "0.75rem 2rem",
+            background: "linear-gradient(to right, #4f46e5, #6366f1)",
+            "&:hover": {
+              background: "linear-gradient(to right, #4338ca, #4f46e5)",
+            },
+          }}
         >
           Continuar
         </Button>
