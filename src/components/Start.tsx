@@ -37,7 +37,15 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
           `}
       />
       {!touched && (
-        <p className="text-lg font-medium text-white">Toca la foto</p>
+        <p className="text-lg font-medium text-center text-white">
+          Toca la foto
+        </p>
+      )}
+
+      {!touched && (
+        <p className="text-lg font-medium text-center text-white">
+          (no tenia mas fotos jksjskjs)
+        </p>
       )}
 
       {!clicked && (
