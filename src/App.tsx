@@ -47,7 +47,7 @@ function App() {
             borderRadius: "1rem",
             border: "1px solid rgba(255, 255, 255, 0.1)",
           },
-          duration: 20 * 1000, // 10 seconds
+          duration: 12 * 1000, // 10 seconds
         }}
       />
     </div>
