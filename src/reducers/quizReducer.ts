@@ -36,7 +36,7 @@ const quizReducer = (state: StateType, action: Action): StateType => {
       if (action.option === 0)
         return {
           ...state,
-          text: "Esoooooooo, ese es el tanke kjskjskjs, así que me debes una canción de ese tanke",
+          text: "Esoooooooo, ese es el tanke kjskjskjs, así que me debes una canción de ese tanke. Ya quiero oírte cantar, o me quedo muy impresionado con tu voz (que es lo mas probable) o me rio (mucho) jksjks",
           selected: action.option,
         };
       if (action.option === 1)
