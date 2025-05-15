@@ -23,13 +23,17 @@ const End = () => {
             top: `${posY}px`,
           }}
         >
-          <Button variant="contained" color="secondary">
+          <Button
+            href="https://wa.me/56430214?text=Hola,%20quiero%20decirte%20que%20eres%20el%20cibernético%20más%20duro%20(y%20más%20guapo)%20que%20conocido%20en%20mi%20vida"
+            variant="contained"
+            color="secondary"
+          >
             Tienes Razón
           </Button>
           <Button
             onClick={() => {
-              setPosX(Math.random() * 300);
-              setPosY(Math.random() * 300);
+              setPosX(Math.random() * 200);
+              setPosY(Math.random() * 200);
             }}
             variant="contained"
             color="secondary"

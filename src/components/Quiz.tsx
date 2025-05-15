@@ -48,7 +48,7 @@ const Quiz = ({ dispatch }: Props) => {
         <Button
           onClick={() => {
             toast.success(
-              "Nunca dejes de hacer algo por el miedo al que dirán, y menos si es algo que amas, al la vida es una sola, y hay que disfrutarla y ser nosotros mismos, porque a nadie le importa lo que hagamos, así que a ser felices. La pena a la verga jksjs",
+              "Nunca dejes de hacer algo por el miedo al que dirán, y menos si es algo que amas, al final la vida es una sola, y hay que disfrutarla y ser nosotros mismos, porque a nadie le importa lo que hagamos, así que a ser felices. La pena a la verga jksjs",
               {
                 icon: "💗",
                 style: { display: "flex", flexDirection: "column-reverse" },

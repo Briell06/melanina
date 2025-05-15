@@ -32,7 +32,7 @@ const Start = ({ text, dispatch, clicked, setClicked }: Props) => {
         className={`
             transition-all duration-500 ease-out  rounded-2xl
             border-4 border-transparent hover:border-indigo-500/50
-            ${clicked ? "scale-200 shadow-2xl" : "hover:scale-105"}
+            ${clicked ? "scale-150 shadow-2xl" : "hover:scale-105"}
             cursor-pointer select-none w-64 h-64 object-cover
           `}
       />
