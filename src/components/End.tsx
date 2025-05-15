@@ -24,7 +24,7 @@ const End = () => {
           }}
         >
           <Button
-            href="https://wa.me/+5356430214?text=Hola, quiero decirte que eres el cibernético más duro (y más guapo) que conocido en mi vida"
+            href="https://wa.me/56430214?text=Hola,%20quiero%20decirte%20que%20eres%20el%20cibernético%20más%20duro%20(y%20más%20guapo)%20que%20conocido%20en%20mi%20vida"
             variant="contained"
             color="secondary"
           >
